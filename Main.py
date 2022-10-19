@@ -1,8 +1,30 @@
 from typing import List
 
 def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-  # Write code here
 
+    smalla = nums1[0:m] 
+    smallb = nums2[0:n]
+
+    i = 0  
+    j = 0
+    k = 0
+    while(i<len(smalla) and j<len(smallb)):
+        if (smalla[i] <= smallb[j]):
+            nums1[k] = smalla[i]
+            i+=1
+        else:
+            nums1[k] = smallb[j]
+            j+=1
+        k+=1
+    while i<len(smalla):
+        nums1[k] = smalla[i]
+        i+=1
+        k+=1
+    while j<len(smallb):
+        nums1[k] = smallb[j]
+        j+=1
+        k+=1
+  
 
 # Do not change the following code
 nums1 = []
